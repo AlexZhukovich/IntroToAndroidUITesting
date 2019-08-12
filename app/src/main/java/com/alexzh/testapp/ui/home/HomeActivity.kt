@@ -5,13 +5,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.alexzh.testapp.R
 import com.alexzh.testapp.data.DummyData
 import com.alexzh.testapp.model.Task
 import com.alexzh.testapp.ui.home.adapter.TaskAdapter
+import com.alexzh.testapp.ui.settings.SettingsActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_home.*
 
@@ -43,6 +44,16 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.general_menu, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            R.id.settings_action -> {
+                SettingsActivity.start(this@HomeActivity)
+                return true
+            }
+        }
+        return false
     }
 
     private fun displayMessage(task: Task) {
