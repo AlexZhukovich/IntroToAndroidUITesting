@@ -11,4 +11,7 @@
     <string name="text_is_not_email">Text is not email</string>
     <string name="check_email_and_password">Check email and password</string>
     <string name="i_agree_should_be_checked">\'I agree\' should be checked</string>
+    <string name="formatted_favourite_task">The \'%s\' task is favourite</string>
+    <string name="formatted_not_favourite_task">The \'%s\' task is not favourite</string>
+    <string name="settings_action">Settings</string>
 </resources>
