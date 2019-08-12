@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="screen_log_in">Log In</string>
+    <string name="action_log_in">Log In</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="i_agree">I agree</string>
+    <string name="email_and_password_are_blank">Email and password are blank</string>
+    <string name="email_is_blank">Email is blank</string>
+    <string name="password_is_blank">Password is blank</string>
+    <string name="text_is_not_email">Text is not email</string>
+    <string name="check_email_and_password">Check email and password</string>
+    <string name="i_agree_should_be_checked">\'I agree\' should be checked</string>
+    <string name="formatted_favourite_task">The \'%s\' task is favourite</string>
+    <string name="formatted_not_favourite_task">The \'%s\' task is not favourite</string>
+    <string name="settings_action">Settings</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails</string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+</resources>
