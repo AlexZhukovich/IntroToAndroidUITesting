@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.alexzh.testapp.R
 import com.alexzh.testapp.data.DummyData
 import com.alexzh.testapp.ext.isNotValidEmail
+import com.alexzh.testapp.ui.home.HomeActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -48,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // start activity
+            HomeActivity.start(this)
         }
     }
 

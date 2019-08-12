@@ -26,17 +26,19 @@
                     android:id="@+id/agreeCheckBox"
                     android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline2" android:layout_marginEnd="8dp"
-                    app:layout_constraintStart_toStartOf="@+id/guideline3" android:layout_marginStart="8dp"/>
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd" android:layout_marginEnd="8dp"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart" android:layout_marginStart="8dp"/>
             <EditText
                     android:id="@+id/emailEditText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
                     android:ems="10"
-                    android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/imageView"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
-                    app:layout_constraintStart_toStartOf="@+id/guideline3" android:hint="@string/hint_email"/>
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                    android:hint="@string/hint_email"/>
             <EditText
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -45,8 +47,8 @@
                     android:id="@+id/passwordEditText"
                     android:layout_marginTop="8dp"
                     app:layout_constraintTop_toBottomOf="@+id/emailEditText"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
-                    app:layout_constraintStart_toStartOf="@+id/guideline3" android:hint="@string/hint_password"/>
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart" android:hint="@string/hint_password"/>
             <TextView
                     android:text="@string/screen_log_in"
                     android:layout_width="wrap_content"
@@ -54,36 +56,36 @@
                     android:id="@+id/textView"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline2"
-                    android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="@+id/guideline3"/>
+                    android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                    android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="@+id/guidelineStart"/>
             <Button
                     android:text="@string/action_log_in"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/loginButton"
                     android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/checkBox"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline2" android:layout_marginEnd="8dp"
-                    app:layout_constraintStart_toStartOf="@+id/guideline3" android:layout_marginStart="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/agreeCheckBox"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd" android:layout_marginEnd="8dp"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart" android:layout_marginStart="8dp"
                     android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
             <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:id="@+id/imageView"
                     android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/textView"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
-                    android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                    android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     android:layout_marginStart="8dp"
                     android:src="@drawable/ic_lock_24dp"/>
 
             <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
                                                         android:layout_height="wrap_content"
-                                                        android:id="@+id/guideline2"
+                                                        android:id="@+id/guidelineEnd"
                                                         android:orientation="vertical"
                                                         app:layout_constraintGuide_end="16dp"/>
             <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content"
                                                         android:layout_height="wrap_content"
-                                                        android:id="@+id/guideline3"
+                                                        android:id="@+id/guidelineStart"
                                                         app:layout_constraintGuide_begin="20dp"
                                                         android:orientation="vertical"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
