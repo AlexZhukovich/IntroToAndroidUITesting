@@ -12,8 +12,13 @@ class TaskViewHolder(
 ) : RecyclerView.ViewHolder(view) {
 
     fun bind(task: Task) {
+        val drawableId = if (task.isFavourite) {
+            R.drawable.ic_favorite_black_24dp
+        } else {
+            R.drawable.ic_favorite_border_black_24dp
+        }
+
         itemView.titleTextView.text = task.title
-        val drawableId = if (task.isFavourite) R.drawable.ic_favorite_black_24dp else R.drawable.ic_favorite_border_black_24dp
         itemView.favouriteImageView.setImageResource(drawableId)
         itemView.favouriteImageView.tag = drawableId
         itemView.favouriteImageView.setOnClickListener { favouriteClick(task) }
