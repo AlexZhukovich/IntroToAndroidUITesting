@@ -28,14 +28,14 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
         setSupportActionBar(toolbar)
 
-        val adapter = TaskAdapter { displayMessage(it) }
+        val adapter = TaskAdapter()
+        adapter.setOnItemClick { handleItemClick(it) }
+        adapter.setOnFavouriteIconClick { handleItemFavouriteIconClick(it) }
         adapter.setTasks(DummyData.getTasks())
 
         val layoutManager = LinearLayoutManager(this)
-
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
         recyclerView.addItemDecoration(DividerItemDecoration(recyclerView.context, layoutManager.orientation))
@@ -56,13 +56,20 @@ class HomeActivity : AppCompatActivity() {
         return false
     }
 
-    private fun displayMessage(task: Task) {
+    private fun handleItemClick(task: Task) {
+        displayMessage(task.title)
+    }
+
+    private fun handleItemFavouriteIconClick(task: Task) {
         val text = if (task.isFavourite) {
             getString(R.string.formatted_favourite_task, task.title)
         } else {
             getString(R.string.formatted_not_favourite_task, task.title)
         }
+        displayMessage(text)
+    }
 
+    private fun displayMessage(text: String) {
         Snackbar.make(root, text, Snackbar.LENGTH_LONG).show()
     }
 }

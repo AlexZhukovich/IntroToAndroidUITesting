@@ -27,7 +27,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-
 @RunWith(AndroidJUnit4::class)
 class HomeActivityTest {
 
@@ -43,6 +42,11 @@ class HomeActivityTest {
 
     @Test
     fun shouldOpenSettingsScreenWhenSettingsItemClicked() {
+        fail()
+    }
+
+    @Test
+    fun shouldBeDisplayedTaskTitleWhenClickOnTask() {
         fail()
     }
 
