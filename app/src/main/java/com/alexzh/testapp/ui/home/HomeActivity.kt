@@ -57,10 +57,11 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun displayMessage(task: Task) {
-        val text = if (task.isFavourite)
-                getString(R.string.formatted_favourite_task, task.title)
-            else
-                getString(R.string.formatted_not_favourite_task, task.title)
+        val text = if (task.isFavourite) {
+            getString(R.string.formatted_favourite_task, task.title)
+        } else {
+            getString(R.string.formatted_not_favourite_task, task.title)
+        }
 
         Snackbar.make(root, text, Snackbar.LENGTH_LONG).show()
     }
