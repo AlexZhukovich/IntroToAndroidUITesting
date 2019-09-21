@@ -6,10 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.alexzh.testapp.R
 import com.alexzh.testapp.model.Task
 
-class TaskAdapter(
-    private val favouriteClick: (Task) -> Unit
-) : RecyclerView.Adapter<TaskViewHolder>() {
-
+class TaskAdapter : RecyclerView.Adapter<TaskViewHolder>() {
+    private var itemClick: ((Task) -> Unit)? = null
+    private var favouriteIconClick: ((Task) -> Unit)? = null
     private val tasks = mutableListOf<Task>()
 
     fun setTasks(tasks: List<Task>) {
@@ -18,10 +17,19 @@ class TaskAdapter(
         notifyDataSetChanged()
     }
 
+    fun setOnItemClick(itemClick: (Task) -> Unit) {
+        this.itemClick = itemClick
+    }
+
+    fun setOnFavouriteIconClick(favouriteIconClick: (Task) -> Unit) {
+        this.favouriteIconClick = favouriteIconClick
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         return TaskViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.item_task, parent, false),
-            favouriteClick
+            favouriteIconClick,
+            itemClick
         )
     }
 

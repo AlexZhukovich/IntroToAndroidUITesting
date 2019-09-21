@@ -8,7 +8,8 @@ import kotlinx.android.synthetic.main.item_task.view.*
 
 class TaskViewHolder(
     view: View,
-    val favouriteClick: (Task) -> Unit
+    private val favouriteIconClick: ((Task) -> Unit)?,
+    private val itemClick: ((Task) -> Unit)?
 ) : RecyclerView.ViewHolder(view) {
 
     fun bind(task: Task) {
@@ -21,6 +22,13 @@ class TaskViewHolder(
         itemView.titleTextView.text = task.title
         itemView.favouriteImageView.setImageResource(drawableId)
         itemView.favouriteImageView.tag = drawableId
-        itemView.favouriteImageView.setOnClickListener { favouriteClick(task) }
+
+        if (favouriteIconClick != null) {
+            itemView.favouriteImageView.setOnClickListener { favouriteIconClick.invoke(task) }
+        }
+
+        if (itemClick != null) {
+            itemView.setOnClickListener { itemClick.invoke(task) }
+        }
     }
 }
