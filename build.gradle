@@ -21,7 +21,7 @@ buildscript {
 apply plugin: "io.gitlab.arturbosch.detekt"
 detekt {
     toolVersion = "$detekt_version"
-    input = input = files("app/src/main/java")
+    input = input = files("app/src/")
     filters = ".*/resources/.*,.*/build/.*"
 }
 
