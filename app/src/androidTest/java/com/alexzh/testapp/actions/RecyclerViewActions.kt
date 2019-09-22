@@ -18,7 +18,7 @@ object RecyclerViewActions {
             }
 
             override fun perform(uiController: UiController, view: View) {
-
+                // should be implemented
             }
         }
     }

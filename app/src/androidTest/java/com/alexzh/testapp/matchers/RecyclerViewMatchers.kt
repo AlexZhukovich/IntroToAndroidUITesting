@@ -11,12 +11,12 @@ object RecyclerViewMatchers {
 
     fun withItemCount(count: Int): Matcher<View> {
         return object : TypeSafeMatcher<View>() {
-            override fun matchesSafely(view: View): Boolean {
-                return false
+            override fun describeTo(description: Description) {
+                // should be implemented
             }
 
-            override fun describeTo(description: Description) {
-
+            override fun matchesSafely(view: View): Boolean {
+                return false
             }
         }
     }
@@ -24,7 +24,7 @@ object RecyclerViewMatchers {
     fun atPosition(position: Int, itemMatcher: Matcher<View>): Matcher<View> {
         return object : BoundedMatcher<View, RecyclerView>(RecyclerView::class.java) {
             override fun describeTo(description: Description) {
-
+                // should be implemented
             }
 
             override fun matchesSafely(view: RecyclerView): Boolean {
