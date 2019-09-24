@@ -61,13 +61,26 @@ class SettingsActivityTest {
 
     /**
      * Test case:
-     *  -
+     *  - the "You signature" property has "Not set" default value
+     *  - the "Default reply action" has "Reply" default value
      *
      * Notes:
-     *  -
+     *  - the "Your signature" string can be found in stings.xml file as signature_title const
+     *  (R.string.signature_title)
+     *  - the "Default reply action" string can be found in stings.xml file as reply_title const
+     *  (R.string.reply_title)
+     *  - the "Reply" action" string can be found in stings.xml file as reply_entity const
+     *  (R.string.reply_entity)
      *
      * Hint(s):
-     *  -
+     *  - check which preferences are used "Support Libraries" vs "AndroidX" (read more about
+     *  difference in comment for the class). You can check the /res/xml/root_preferences.xml
+     *  for understanding which preferences are used in the project.
+     *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
+     *  and "Layout Inspector" can help with it.
+     *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
+     *  (can be not implemented yet).
+     *  - the preference item often has 2 descends: title and value.
      */
     @Test
     fun shouldMessagesPropertiesHaveDefaultValues() {
@@ -76,13 +89,24 @@ class SettingsActivityTest {
 
     /**
      * Test case:
-     *  -
+     *  - the "Sync email periodically" has "false" default value
+     *  - the "Download incoming attachments" has "false" default value
      *
      * Notes:
-     *  -
+     *  - the "Sync email periodically" string can be found in stings.xml file as sync_title const
+     *  (R.string.sync_title)
+     *  - the "Download incoming attachments" string can be found in strings.xml file as
+     *  attachment_title const (R.string.attachment_title)
      *
      * Hint(s):
-     *  -
+     *  - check which preferences are used "Support Libraries" vs "AndroidX" (read more about
+     *  difference in comment for the class). You can check the /res/xml/root_preferences.xml
+     *  for understanding which preferences are used in the project.
+     *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
+     *  and "Layout Inspector" can help with it.
+     *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
+     *  (can be not implemented yet).
+     *  - the preference item often has 2 descends: title and value.
      */
     @Test
     fun shouldSyncPropertiesHaveDefaultValues() {
@@ -91,13 +115,22 @@ class SettingsActivityTest {
 
     /**
      * Test case:
-     *  -
+     *  - the "Your signature" property has "Not set" default value
+     *  - the "Your signature" property has "test" value after changing it in dialog
      *
      * Notes:
-     *  -
+     *  - the "Your signature" string can be found in stings.xml file as signature_title const
+     *  (R.string.signature_title)
      *
      * Hint(s):
-     *  -
+     *  - check which preferences are used "Support Libraries" vs "AndroidX" (read more about
+     *  difference in comment for the class). You can check the /res/xml/root_preferences.xml
+     *  for understanding which preferences are used in the project.
+     *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
+     *  and "Layout Inspector" can help with it.
+     *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
+     *  (can be not implemented yet).
+     *  - the preference item often has 2 descends: title and value.
      */
     @Test
     fun shouldChangeDefaultValueOfYourSignature() {
@@ -106,13 +139,26 @@ class SettingsActivityTest {
 
     /**
      * Test case:
-     *  -
+     *  - the "Default reply action" has "Reply" default value
+     *  - the "Default reply action" has "Reply to all" value after changing it in dialog
      *
      * Notes:
-     *  -
+     *  - the "Default reply action" string can be found in stings.xml file as reply_title const
+     *  (R.string.reply_title)
+     *  - the "Reply" string can be found in stings.xml file as reply_entity const
+     *  (R.string.reply_entity)
+     *  - the "Reply to all" string can be found in stings.xml file as reply_to_all_entity const
+     *  (R.string.reply_to_all_entity)
      *
      * Hint(s):
-     *  -
+     *  - check which preferences are used "Support Libraries" vs "AndroidX" (read more about
+     *  difference in comment for the class). You can check the /res/xml/root_preferences.xml
+     *  for understanding which preferences are used in the project.
+     *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
+     *  and "Layout Inspector" can help with it.
+     *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
+     *  (can be not implemented yet).
+     *  - the preference item often has 2 descends: title and value.
      */
     @Test
     fun shouldChangeDefaultValueOfDefaultReplyAction() {
@@ -121,13 +167,22 @@ class SettingsActivityTest {
 
     /**
      * Test case:
-     *  -
+     *  - the "Sync email periodically" has "false" default value
+     *  - the "Sync email periodically" has "true" value after changing property
      *
      * Notes:
-     *  -
+     *  - the "Sync email periodically" string can be found in stings.xml file as sync_title const
+     *  (R.string.sync_title)
      *
      * Hint(s):
-     *  -
+     *  - check which preferences are used "Support Libraries" vs "AndroidX" (read more about
+     *  difference in comment for the class). You can check the /res/xml/root_preferences.xml
+     *  for understanding which preferences are used in the project.
+     *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
+     *  and "Layout Inspector" can help with it.
+     *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
+     *  (can be not implemented yet).
+     *  - the preference item often has 2 descends: title and value.
      */
     @Test
     fun shouldChangeDefaultValueOfSyncEmailPeriodically() {
@@ -136,13 +191,27 @@ class SettingsActivityTest {
 
     /**
      * Test case:
-     *  -
+     *  - the "Download incoming attachments" is disabled
+     *  - the "Download incoming attachments" has "false" default value
+     *  - the "Sync email periodically" has "true" value after changing property
+     *  - the "Download incoming attachments" enabled after changing "Sync email periodically" to "true"
+     *  - the "Download incoming attachments" change value after changing property
      *
      * Notes:
-     *  -
+     *  - the "Download incoming attachments" string can be found in stings.xml file as attachment_title const
+     *  (R.string.attachment_title)
+     *  - the "Sync email periodically" string can be found in stings.xml file as sync_title const
+     *  (R.string.sync_title)
      *
      * Hint(s):
-     *  -
+     *  - check which preferences are used "Support Libraries" vs "AndroidX" (read more about
+     *  difference in comment for the class). You can check the /res/xml/root_preferences.xml
+     *  for understanding which preferences are used in the project.
+     *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
+     *  and "Layout Inspector" can help with it.
+     *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
+     *  (can be not implemented yet).
+     *  - the preference item often has 2 descends: title and value.
      */
     @Test
     fun shouldChangeDefaultValueOfDownloadIncomingAttachments() {
