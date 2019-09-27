@@ -15,8 +15,26 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class LoginActivityTest {
 
-    @Rule
-    @JvmField
+    /**
+     * The {@link ActivityTestRule} provides functional testing of a single {@link Activity}.
+     * The Espresso framework requires it for launching Activity for testings.
+     *
+     * We can configure activity before running in the following ways:
+     *  - Using the {@link #ActivityTestRule(Class, boolean, boolean)} where the second parameter
+     *  is initialTouchMode and the third one is launchActivity. If launch activity is true the
+     *  Activity will be launched before the test case. It means we cannot configure it before
+     *  executing the test case. If we want to configure which intent launch activity and pass
+     *  additional parameters we can execute {@see activity#launchActivity(Intent)} method with
+     *  required intent.
+     *  - Using the {@link ActivityTestRule#beforeActivityLaunched) method we can do additional
+     *  action before executing test case, like configure Mock objects, clean database, etc.)
+     *
+     * Note:
+     *  - a field created for JUnit Rule should be public, not static, and a subtype of TestRule
+     *  or MethodRule (https://junit.org/junit4/javadoc/4.12/org/junit/Rule.html)
+     *  - In Kotlin we can use @get: Rule or @Rule @JvmField annotations for JUnit Rule fields
+     */
+    @get: Rule
     val activity = ActivityTestRule(LoginActivity::class.java)
 
     /**
