@@ -53,6 +53,24 @@ class SettingsActivityTest {
 
     /**
      * Test case:
+     *  - Toolbar should have a text "Settings"
+     *
+     * Notes:
+     *  - the "Toolbar" view has ID: toolbar (R.id.toolbar)
+     *  - the "Settings" string can be found in strings.xml file as app_name const
+     *  (R.string.screen_settings)
+     *
+     * Hint(s):
+     *  - the toolbar title can be checked with ToolbarMatcher#withToolbarTitle ViewMatcher
+     *  (can be not implemented yet).
+     */
+    @Test
+    fun shouldToolbarContainsSettingsTitle() {
+        fail()
+    }
+
+    /**
+     * Test case:
      *  - the "Messages" category should be displayed
      *  - the "Sync" category should be displayed
      *
