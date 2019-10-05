@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">TestApp</string>
     <string name="screen_log_in">Log In</string>
+    <string name="screen_settings">Settings</string>
     <string name="action_log_in">Log In</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
