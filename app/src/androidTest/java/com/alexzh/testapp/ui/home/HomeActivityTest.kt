@@ -45,7 +45,7 @@ class HomeActivityTest {
      *  - Toolbar should have a text "TestApp"
      *
      * Notes:
-     *  - the "Toolbar" view has ID: toolbar (R.id.toolbar)
+     *  - the "Toolbar" view has ID: homeToolbar (R.id.homeToolbar)
      *  - the "TestApp" string can be found in strings.xml file as app_name const (R.string.app_name)
      *
      * Hint(s):

@@ -56,7 +56,7 @@ class SettingsActivityTest {
      *  - Toolbar should have a text "Settings"
      *
      * Notes:
-     *  - the "Toolbar" view has ID: toolbar (R.id.toolbar)
+     *  - the "Toolbar" view has ID: settingsToolbar (R.id.settingsToolbar)
      *  - the "Settings" string can be found in strings.xml file as app_name const
      *  (R.string.screen_settings)
      *
