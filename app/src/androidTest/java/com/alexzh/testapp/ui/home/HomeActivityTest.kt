@@ -42,40 +42,6 @@ class HomeActivityTest {
 
     /**
      * Test case:
-     *  - Toolbar should have a text "TestApp"
-     *
-     * Notes:
-     *  - the "Toolbar" view has ID: homeToolbar (R.id.homeToolbar)
-     *  - the "TestApp" string can be found in strings.xml file as app_name const (R.string.app_name)
-     *
-     * Hint(s):
-     *  - the toolbar title can be checked with ToolbarMatcher#withToolbarTitle ViewMatcher
-     *  (can be not implemented yet).
-     */
-    @Test
-    fun shouldToolbarContainsTextAppTitle() {
-        fail()
-    }
-
-    /**
-     * Test case:
-     *  - RecyclerView should have 15 items
-     *
-     * Notes:
-     *  - the "RecyclerView" has ID: recyclerView (R.id.recyclerView)
-     *  - the "RecyclerView" shows items created in DummyData#getTasks() method
-     *
-     * Hint(s):
-     *  - the number of items in RecyclerView can be checked with RecyclerViewMatchers#withItemCount
-     *  ViewMatcher (can be not implemented yet).
-     */
-    @Test
-    fun shouldRecyclerViewHas15Items() {
-        fail()
-    }
-
-    /**
-     * Test case:
      *  - HomeActivity should have options menu
      *  - SettingsActivity should be opened after pressing on "Settings" in options menu
      *
@@ -107,6 +73,40 @@ class HomeActivityTest {
      */
     @Test
     fun shouldBeDisplayedTaskTitleWhenClickOnTask() {
+        fail()
+    }
+
+    /**
+     * Test case:
+     *  - Toolbar should have a text "TestApp"
+     *
+     * Notes:
+     *  - the "Toolbar" view has ID: homeToolbar (R.id.homeToolbar)
+     *  - the "TestApp" string can be found in strings.xml file as app_name const (R.string.app_name)
+     *
+     * Hint(s):
+     *  - the toolbar title can be checked with ToolbarMatcher#withToolbarTitle ViewMatcher
+     *  (can be not implemented yet).
+     */
+    @Test
+    fun shouldToolbarContainsTextAppTitle() {
+        fail()
+    }
+
+    /**
+     * Test case:
+     *  - RecyclerView should have 15 items
+     *
+     * Notes:
+     *  - the "RecyclerView" has ID: recyclerView (R.id.recyclerView)
+     *  - the "RecyclerView" shows items created in DummyData#getTasks() method
+     *
+     * Hint(s):
+     *  - the number of items in RecyclerView can be checked with RecyclerViewMatchers#withItemCount
+     *  ViewMatcher (can be not implemented yet).
+     */
+    @Test
+    fun shouldRecyclerViewHas15Items() {
         fail()
     }
 
