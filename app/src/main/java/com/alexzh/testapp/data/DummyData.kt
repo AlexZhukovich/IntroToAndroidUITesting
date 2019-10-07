@@ -3,27 +3,20 @@ package com.alexzh.testapp.data
 import com.alexzh.testapp.model.Task
 
 object DummyData {
-
-    const val LOGIN = "test-account@test.test"
-    const val PASSWORD = "test"
+    private const val TASK_COUNT = 45
+    const val LOGIN = "t@t.t"
+    const val PASSWORD = "t"
 
     fun getTasks(): List<Task> {
-        return listOf(
-            Task("Test item 1", true),
-            Task("Test item 2", true),
-            Task("Test item 3", true),
-            Task("Test item 4", true),
-            Task("Test item 5", true),
-            Task("Test item 6", false),
-            Task("Test item 7", false),
-            Task("Test item 8", false),
-            Task("Test item 9", false),
-            Task("Test item 10", false),
-            Task("Test item 11", false),
-            Task("Test item 12", false),
-            Task("Test item 13", false),
-            Task("Test item 14", false),
-            Task("Test item 15", false)
-        )
+        return mutableListOf<Task>().apply {
+            repeat(TASK_COUNT) {
+                this.add(
+                    Task(
+                        title = "Test item ${it + 1}",
+                        isFavourite = it % 2 == 0
+                    )
+                )
+            }
+        }
     }
 }
