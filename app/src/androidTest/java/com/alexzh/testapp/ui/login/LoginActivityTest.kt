@@ -22,7 +22,7 @@ class LoginActivityTest {
      * The {@link ActivityTestRule} provides functional testing of a single {@link Activity}.
      * The Espresso framework requires it for launching Activity for testings.
      *
-     * We can configure activity before running in the following ways:
+     * We can configure activity before running the test in the following ways:
      *  - Using the {@link #ActivityTestRule(Class, boolean, boolean)}
      *  {@link #ActivityTestRule(Class, boolean, boolean)}
      *    - first argument *activityClass* - defines the activity that is under test.
