@@ -10,7 +10,8 @@ import org.junit.runner.RunWith
 /**
  * Test suite for checking the HomeActivity class from a UI perspective.
  *
- * Note: This class can be run without any pre-requirements.
+ * Note:
+ * This class can be run without any pre-requirements.
  * The HomeActivity class doesn't verify if the User is logged in because the main idea of the project
  * is to learn the basics of Espresso framework. You can check I'mBarista project for more complex
  * practices and test cases.

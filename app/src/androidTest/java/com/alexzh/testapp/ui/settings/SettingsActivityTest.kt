@@ -23,7 +23,8 @@ import org.junit.runner.RunWith
  * tools that allow one to work with a RecyclerView, like RecyclerViewActions from "espresso-contrib"
  * library.
  *
- * Note: This class can be run without any pre-requirements.
+ * Note:
+ * This class can be run without any pre-requirements.
  * The SettingsActivity class doesn't verify if the User is logged in because the main idea of the
  * project is to learn the basics of Espresso framework. You can check I'mBarista project for more
  * complex practices and test cases.
