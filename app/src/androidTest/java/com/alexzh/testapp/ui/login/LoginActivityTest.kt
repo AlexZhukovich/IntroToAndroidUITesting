@@ -279,6 +279,9 @@ class LoginActivityTest {
      *
      * Hint(s):
      *  - error text can be found by text on screen or by text in view
+     *  - Intent.intended(IntentMatcher) allows us to verify that Activity was opened.
+     *  The Intents component should be initialized before using with the Intents#init() method
+     *  and released when it's not needed with the Intents#release() method.
      */
     @Test
     fun shouldOpenHomeScreenWhenEmailAndPasswordAreCorrectAndAgreeCheckboxIsChecked() {
