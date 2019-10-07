@@ -23,12 +23,18 @@ class LoginActivityTest {
      * The Espresso framework requires it for launching Activity for testings.
      *
      * We can configure activity before running in the following ways:
-     *  - Using the {@link #ActivityTestRule(Class, boolean, boolean)} where the second parameter
-     *  is initialTouchMode and the third one is launchActivity. If launch activity is true the
-     *  Activity will be launched before the test case. It means we cannot configure it before
-     *  executing the test case. If we want to configure which intent launch activity and pass
-     *  additional parameters we can execute {@see activity#launchActivity(Intent)} method with
-     *  required intent.
+     *  - Using the {@link #ActivityTestRule(Class, boolean, boolean)}
+     *  {@link #ActivityTestRule(Class, boolean, boolean)}
+     *    - first argument *activityClass* - defines the activity that is under test.
+     *    - second argument *initialTouchMode* - when set to true, activity will be started in "touch mode".
+     *    Touch mode is a state of the UIToolkit that causes the view hierarchy to depend only
+     *    on the user interaction. For more information please check:
+     *    https://android-developers.googleblog.com/2008/12/touch-mode.html
+     *    - third argument *launchActivity* - if this argument is set to true the Activity will be
+     *    launched before the test case. Before the set up marked with @Before and closed after
+     *    tear down marked with @After. This means we cannot configure it before executing the test case.
+     *    If this argument is set to false it is possible to launch the activity with different Intents
+     *    per each test method. This is especially useful if we have extras that we want to put in the intent
      *  ```
      *  @Rule @JvmField
      *  val activity = ActivityTestRule(HomeActivity::class.java, true, false)
