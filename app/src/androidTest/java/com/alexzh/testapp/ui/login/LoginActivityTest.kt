@@ -29,8 +29,27 @@ class LoginActivityTest {
      *  executing the test case. If we want to configure which intent launch activity and pass
      *  additional parameters we can execute {@see activity#launchActivity(Intent)} method with
      *  required intent.
-     *  - Using the {@link ActivityTestRule#beforeActivityLaunched) method we can do additional
+     *  ```
+     *  @Rule @JvmField
+     *  val activity = ActivityTestRule(HomeActivity::class.java, true, false)
+     *
+     *  @Before
+     *  fun setUp() {
+     *      val intent = ...
+     *      activity.launchActivity(intent)
+     *  }
+     *  ```
+     * - Using the {@link ActivityTestRule#beforeActivityLaunched) method we can do additional
      *  action before executing test case, like configure Mock objects, clean database, etc.)
+     *  ```
+     *  @get: Rule
+     *  val activity = object: ActivityTestRule<LoginActivity(LoginActivity::class.java>) {
+     *      override fun beforeActivityLaunched() {
+     *          super.beforeActivityLaunched()
+     *          ...
+     *      }
+     *  }
+     *  ```
      *
      * Note:
      *  - a field created for JUnit Rule should be public, not static, and a subtype of TestRule
