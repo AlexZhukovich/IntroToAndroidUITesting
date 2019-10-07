@@ -11,20 +11,22 @@ import org.junit.runner.RunWith
  * Test suite for checking the SettingsActivity class from a UI perspective.
  *
  * In Android project often used preferences from "Support Libraries" or "AndroidX".
- * This is very important to know which Preferences used in tested project because under the hood
- * they used different technologies.
+ * Android projects often use preferences from "Support Libraries". Now with the advent of the
+ * "AndroidX" libraries it is very important to know which ones are used in the tested project.
+ * Although similar on the first glance they use different technologies under the hood.
  *
  * The "Support Libraries" implementation use ListView for rendering Preferences. As a result we
  * should test them with the onData method.
  *
  * The "AndroidX" implementation uses RecyclerView for displaying Preferences. As a result, we can
- * use the onView method for the testing screen with Preferences. Espresso framework has many build-in
- * tools for work with RecyclerView, like RecyclerViewActions from "espresso-contrib" library.
+ * use the onView method for testing screen with Preferences. Espresso framework has many built-in
+ * tools that allow one to work with a RecyclerView, like RecyclerViewActions from "espresso-contrib"
+ * library.
  *
  * Note: This class can be run without any pre-requirements.
- * The SettingsActivity class doesn't verify if User logged in because the main idea of the project
- * is learning basics of Espresso framework. You can check I'mBarista project for more complex
- * practices and test cases.
+ * The SettingsActivity class doesn't verify if the User is logged in because the main idea of the
+ * project is to learn the basics of Espresso framework. You can check I'mBarista project for more
+ * complex practices and test cases.
  */
 @RunWith(AndroidJUnit4::class)
 class SettingsActivityTest {

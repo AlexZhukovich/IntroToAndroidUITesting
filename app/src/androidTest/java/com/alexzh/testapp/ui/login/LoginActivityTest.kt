@@ -11,6 +11,8 @@ import org.junit.runner.RunWith
  * Test suite for checking the LoginActivity class from a UI perspective.
  *
  * Note: This class can be run without any pre-requirements.
+ * The the main idea of the project is to learn the basics of Espresso framework. You can check
+ * I'mBarista project for more complex practices and test cases.
  */
 @RunWith(AndroidJUnit4::class)
 class LoginActivityTest {
