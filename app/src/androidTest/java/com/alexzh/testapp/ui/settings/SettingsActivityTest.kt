@@ -82,8 +82,8 @@ class SettingsActivityTest {
      *
      * Hint(s):
      *  - check which preferences are used "Support Libraries" vs "AndroidX" (read more about
-     *  difference in comment for the class). You can check the /res/xml/root_preferences.xml
-     *  for understanding which preferences are used in the project.
+     *  difference in comment for the [SettingsActivityTest] class). You can check the
+     *  /res/xml/root_preferences.xml for understanding which preferences are used in the project.
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
      *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
@@ -110,8 +110,8 @@ class SettingsActivityTest {
      *
      * Hint(s):
      *  - check which preferences are used "Support Libraries" vs "AndroidX" (read more about
-     *  difference in comment for the class). You can check the /res/xml/root_preferences.xml
-     *  for understanding which preferences are used in the project.
+     *  difference in comment for the [SettingsActivityTest] class). You can check the
+     *  /res/xml/root_preferences.xml for understanding which preferences are used in the project.
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
      *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
@@ -136,8 +136,8 @@ class SettingsActivityTest {
      *
      * Hint(s):
      *  - check which preferences are used "Support Libraries" vs "AndroidX" (read more about
-     *  difference in comment for the class). You can check the /res/xml/root_preferences.xml
-     *  for understanding which preferences are used in the project.
+     *  difference in comment for the [SettingsActivityTest] class). You can check the
+     *  /res/xml/root_preferences.xml for understanding which preferences are used in the project.
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
      *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
@@ -160,8 +160,8 @@ class SettingsActivityTest {
      *
      * Hint(s):
      *  - check which preferences are used "Support Libraries" vs "AndroidX" (read more about
-     *  difference in comment for the class). You can check the /res/xml/root_preferences.xml
-     *  for understanding which preferences are used in the project.
+     *  difference in comment for the [SettingsActivityTest] class). You can check the
+     *  /res/xml/root_preferences.xml for understanding which preferences are used in the project.
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
      *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
@@ -188,8 +188,8 @@ class SettingsActivityTest {
      *
      * Hint(s):
      *  - check which preferences are used "Support Libraries" vs "AndroidX" (read more about
-     *  difference in comment for the class). You can check the /res/xml/root_preferences.xml
-     *  for understanding which preferences are used in the project.
+     *  difference in comment for the [SettingsActivityTest] class). You can check the
+     *  /res/xml/root_preferences.xml for understanding which preferences are used in the project.
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
      *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
@@ -212,8 +212,8 @@ class SettingsActivityTest {
      *
      * Hint(s):
      *  - check which preferences are used "Support Libraries" vs "AndroidX" (read more about
-     *  difference in comment for the class). You can check the /res/xml/root_preferences.xml
-     *  for understanding which preferences are used in the project.
+     *  difference in comment for the [SettingsActivityTest] class). You can check the
+     *  /res/xml/root_preferences.xml for understanding which preferences are used in the project.
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
      *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
@@ -241,8 +241,8 @@ class SettingsActivityTest {
      *
      * Hint(s):
      *  - check which preferences are used "Support Libraries" vs "AndroidX" (read more about
-     *  difference in comment for the class). You can check the /res/xml/root_preferences.xml
-     *  for understanding which preferences are used in the project.
+     *  difference in comment for the [SettingsActivityTest] class). You can check the
+     *  /res/xml/root_preferences.xml for understanding which preferences are used in the project.
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
      *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
