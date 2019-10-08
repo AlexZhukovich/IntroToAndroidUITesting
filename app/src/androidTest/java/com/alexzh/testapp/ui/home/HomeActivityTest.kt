@@ -97,7 +97,9 @@ class HomeActivityTest {
      * Hint(s):
      *  - Intent.intended(IntentMatcher) allows us to verify that Activity was opened.
      *  The Intents component should be initialized before using with the Intents#init() method
-     *  and released when it's not needed with the Intents#release() method.
+     *  and released when it's not needed with the Intents#release() method. As an alternative
+     *  we can use IntentsTestRule, which initializes Espresso-Intents before each test annotated
+     *  with Test and releases Espresso-Intents after each test run.
      *  - the Espresso#openActionBarOverflowOrOptionsMenu method allows us to open options menu.
      */
     @Test
