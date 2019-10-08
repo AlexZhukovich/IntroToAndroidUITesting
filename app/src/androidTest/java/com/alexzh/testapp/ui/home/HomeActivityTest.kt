@@ -138,7 +138,8 @@ class HomeActivityTest {
 
     /**
      * Test case:
-     *  - RecyclerView should have 15 items
+     *  - RecyclerView should have 45 items by default
+     *  - Number of tasks can be changed in [com.alexzh.testapp.data.DummyData.TASK_COUNT] const
      *
      * Notes:
      *  - the "RecyclerView" has ID: recyclerView (R.id.recyclerView)
@@ -147,9 +148,14 @@ class HomeActivityTest {
      * Hint(s):
      *  - the number of items in RecyclerView can be checked with RecyclerViewMatchers#withItemCount
      *  ViewMatcher (can be not implemented yet).
+     *  - the number of visible items depends on the screen. If you want to do action with invisible
+     *  on screen item you should scroll to this item first, you can use the following actions:
+     *     - RecyclerViewActions#scrollTo(itemMatcher)
+     *     - RecyclerViewActions#scrollToHolder(viewHolderMatcher)
+     *     - RecyclerViewActions#scrollToPosition(position)
      */
     @Test
-    fun shouldRecyclerViewHas15Items() {
+    fun shouldRecyclerViewHas45Items() {
         fail()
     }
 
