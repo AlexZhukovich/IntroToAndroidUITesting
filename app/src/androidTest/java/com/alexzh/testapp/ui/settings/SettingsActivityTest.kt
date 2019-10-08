@@ -28,6 +28,8 @@ import org.junit.runner.RunWith
  * The SettingsActivity class doesn't verify if the User is logged in because the main idea of the
  * project is to learn the basics of Espresso framework. You can check I'mBarista project for more
  * complex practices and test cases.
+ *
+ * I'mBarista: https://github.com/AlexZhukovich/ImBarista-App
  */
 @RunWith(AndroidJUnit4::class)
 class SettingsActivityTest {
