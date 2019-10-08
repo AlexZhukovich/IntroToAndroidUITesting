@@ -150,9 +150,9 @@ class HomeActivityTest {
      *  ViewMatcher (can be not implemented yet).
      *  - the number of visible items depends on the screen. If you want to do action with invisible
      *  on screen item you should scroll to this item first, you can use the following actions:
-     *     - RecyclerViewActions#scrollTo(itemMatcher)
-     *     - RecyclerViewActions#scrollToHolder(viewHolderMatcher)
-     *     - RecyclerViewActions#scrollToPosition(position)
+     *    - RecyclerViewActions#scrollTo(itemMatcher)
+     *    - RecyclerViewActions#scrollToHolder(viewHolderMatcher)
+     *    - RecyclerViewActions#scrollToPosition(position)
      */
     @Test
     fun shouldRecyclerViewHas45Items() {
