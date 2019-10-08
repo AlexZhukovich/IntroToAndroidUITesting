@@ -69,6 +69,23 @@ class HomeActivityTest {
     /**
      * Test case:
      *  - HomeActivity should have options menu
+     *  - "Settings" menu item should be displayed in options menu
+     *
+     * Notes:
+     *  - the "Settings" text can be found in strings.xml file as settings_action const
+     *  (R.string.settings_action)
+     *
+     * Hint(s):
+     *  - the Espresso#openActionBarOverflowOrOptionsMenu method allows us to open options menu.
+     */
+    @Test
+    fun shouldOptionsMenuHasSettingsItem() {
+        fail()
+    }
+
+    /**
+     * Test case:
+     *  - HomeActivity should have options menu
      *  - SettingsActivity should be opened after pressing on "Settings" in options menu
      *
      * Notes:
