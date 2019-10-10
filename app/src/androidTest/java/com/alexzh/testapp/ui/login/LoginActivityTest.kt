@@ -12,10 +12,13 @@ import org.junit.runner.RunWith
  *
  * Note:
  * This class can be run without any pre-requirements.
- * The the main idea of the project is to learn the basics of Espresso framework. You can check
- * I'mBarista project for more complex practices and test cases.
+ * The the main idea of the project is to learn the basics of Espresso framework.
  *
- * I'mBarista: https://github.com/AlexZhukovich/ImBarista-App
+ * You can check I'mBarista (https://github.com/AlexZhukovich/ImBarista-App) project for more complex
+ * practices and test cases.
+ *
+ * The "art/screens-with-views/login-screen.png" image demonstrates Login screen with all views
+ * and IDs.
  */
 @RunWith(AndroidJUnit4::class)
 class LoginActivityTest {

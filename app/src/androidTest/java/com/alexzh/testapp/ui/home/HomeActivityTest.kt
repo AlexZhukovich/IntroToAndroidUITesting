@@ -13,10 +13,13 @@ import org.junit.runner.RunWith
  * Note:
  * This class can be run without any pre-requirements.
  * The HomeActivity class doesn't verify if the User is logged in because the main idea of the project
- * is to learn the basics of Espresso framework. You can check I'mBarista project for more complex
+ * is to learn the basics of Espresso framework.
+ *
+ * You can check I'mBarista project (https://github.com/AlexZhukovich/ImBarista-App) for more complex
  * practices and test cases.
  *
- * I'mBarista: https://github.com/AlexZhukovich/ImBarista-App
+ * The "art/screens-with-views/home-screen.png" image demonstrates Home screen with all views
+ * and IDs.
  */
 @RunWith(AndroidJUnit4::class)
 class HomeActivityTest {

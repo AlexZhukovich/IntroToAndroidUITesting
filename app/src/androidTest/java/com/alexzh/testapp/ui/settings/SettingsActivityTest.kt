@@ -26,10 +26,13 @@ import org.junit.runner.RunWith
  * Note:
  * This class can be run without any pre-requirements.
  * The SettingsActivity class doesn't verify if the User is logged in because the main idea of the
- * project is to learn the basics of Espresso framework. You can check I'mBarista project for more
- * complex practices and test cases.
+ * project is to learn the basics of Espresso framework.
  *
- * I'mBarista: https://github.com/AlexZhukovich/ImBarista-App
+ * You can check I'mBarista project (https://github.com/AlexZhukovich/ImBarista-App) for more complex
+ * practices and test cases.
+ *
+ * The "art/screens-with-views/settings-screen.png" image demonstrates Settings screen with all views
+ * and IDs.
  */
 @RunWith(AndroidJUnit4::class)
 class SettingsActivityTest {
