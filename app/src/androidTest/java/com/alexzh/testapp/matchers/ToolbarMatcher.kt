@@ -18,6 +18,11 @@ object ToolbarMatcher {
      * @param textMatcher the string matcher the toolbar title is expected to hold.
      */
     fun withToolbarTitle(textMatcher: Matcher<String>): Matcher<View> {
+
+        /**
+         * BoundedMatcher has a matcher sugar that lets you create a matcher for a given type
+         * but only process items of a specific subtype of that matcher.
+         */
         return object : BoundedMatcher<View, Toolbar>(Toolbar::class.java) {
 
             /**
