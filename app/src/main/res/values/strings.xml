@@ -24,6 +24,8 @@
     <!-- Messages Preferences -->
     <string name="signature_title">Your signature</string>
     <string name="reply_title">Default reply action</string>
+    <string name="reply_entity">Reply</string>
+    <string name="reply_to_all_entity">Reply to all</string>
 
     <!-- Sync Preferences -->
     <string name="sync_title">Sync email periodically</string>
