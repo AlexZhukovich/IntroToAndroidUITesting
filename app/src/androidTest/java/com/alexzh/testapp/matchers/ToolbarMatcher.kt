@@ -7,12 +7,12 @@ import org.hamcrest.Description
 import org.hamcrest.Matcher
 
 /**
- * Custom matchers for [androidx.appcompat.widget.Toolbar] class.
+ * Custom matchers for [Toolbar] class.
  */
 object ToolbarMatcher {
 
     /**
-     * Returns a matcher that matches [android.view.View] that  is displaying the string in Toolbar
+     * Returns a matcher that matches [View] that  is displaying the string in Toolbar
      * associated with the given id.
      *
      * @param textMatcher the string matcher the toolbar title is expected to hold.
@@ -51,7 +51,7 @@ object ToolbarMatcher {
             /**
              * Evaluates the matcher for toolbar.
              *
-             * @param toolbar the [androidx.appcompat.widget.Toolbar] view to check the title.
+             * @param toolbar the [Toolbar] view to check the title.
              *
              * Hint:
              *  - the title of toolbar can be get from the title property: `toolbar?.title`.
