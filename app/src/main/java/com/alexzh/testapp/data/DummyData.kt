@@ -4,7 +4,7 @@ import com.alexzh.testapp.model.Task
 
 object DummyData {
     private const val TASK_COUNT = 45
-    const val LOGIN = "t@t.t"
+    const val EMAIL = "t@t.t"
     const val PASSWORD = "t"
 
     fun getTasks(): List<Task> {

@@ -1,8 +1,18 @@
 package com.alexzh.testapp.ui.login
 
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.replaceText
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.intent.Intents
+import androidx.test.espresso.intent.matcher.IntentMatchers
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
-import org.junit.Assert.fail
+import com.alexzh.testapp.R
+import com.alexzh.testapp.data.DummyData
+import com.alexzh.testapp.ui.home.HomeActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -85,7 +95,17 @@ class LoginActivityTest {
      */
     @Test
     fun shouldBeEnabledAllViews() {
-        fail()
+        onView(withId(R.id.emailEditText))
+            .check(matches(isEnabled()))
+
+        onView(withId(R.id.passwordEditText))
+            .check(matches(isEnabled()))
+
+        onView(withId(R.id.agreeCheckBox))
+            .check(matches(isEnabled()))
+
+        onView(withId(R.id.loginButton))
+            .check(matches(isEnabled()))
     }
 
     /**
@@ -101,7 +121,11 @@ class LoginActivityTest {
      */
     @Test
     fun shouldEmailAndPasswordFieldsDisplayHint() {
-        fail()
+        onView(withId(R.id.emailEditText))
+            .check(matches(withHint(R.string.hint_email)))
+
+        onView(withId(R.id.passwordEditText))
+            .check(matches(withHint(R.string.hint_password)))
     }
 
     /**
@@ -117,6 +141,11 @@ class LoginActivityTest {
      *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
      *  - the "Email and password are blank" string can be found in strings.xml file as
      *  email_and_password_are_blank const (R.string.email_and_password_are_blank)
+     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
+     *  by character.
+     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
+     *  into text field.
+     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -126,7 +155,20 @@ class LoginActivityTest {
      */
     @Test
     fun shouldDisplayErrorWhenEmailAndPasswordAreBlank() {
-        fail()
+        val email = ""
+        val password = ""
+
+        onView(withId(R.id.emailEditText))
+            .perform(replaceText(email))
+
+        onView(withId(R.id.passwordEditText))
+            .perform(replaceText(password))
+
+        onView(withId(R.id.loginButton))
+            .perform(click())
+
+        onView(withText(R.string.email_and_password_are_blank))
+            .check(matches(isDisplayed()))
     }
 
     /**
@@ -142,6 +184,11 @@ class LoginActivityTest {
      *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
      *  - the "Email is blank" string can be found in strings.xml file as
      *  email_is_blank const (R.string.email_is_blank)
+     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
+     *  by character.
+     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
+     *  into text field.
+     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -151,7 +198,20 @@ class LoginActivityTest {
      */
     @Test
     fun shouldDisplayErrorWhenEmailIsBlank() {
-        fail()
+        val email = ""
+        val password = "test"
+
+        onView(withId(R.id.emailEditText))
+            .perform(replaceText(email))
+
+        onView(withId(R.id.passwordEditText))
+            .perform(replaceText(password))
+
+        onView(withId(R.id.loginButton))
+            .perform(click())
+
+        onView(withText(R.string.email_is_blank))
+            .check(matches(isDisplayed()))
     }
 
     /**
@@ -167,6 +227,11 @@ class LoginActivityTest {
      *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
      *  - the "Password is blank" string can be found in strings.xml file as
      *  password_is_blank const (R.string.password_is_blank)
+     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
+     *  by character.
+     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
+     *  into text field.
+     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -176,7 +241,20 @@ class LoginActivityTest {
      */
     @Test
     fun shouldDisplayErrorWhenPasswordIsBlank() {
-        fail()
+        val email = "test"
+        val password = ""
+
+        onView(withId(R.id.emailEditText))
+            .perform(replaceText(email))
+
+        onView(withId(R.id.passwordEditText))
+            .perform(replaceText(password))
+
+        onView(withId(R.id.loginButton))
+            .perform(click())
+
+        onView(withText(R.string.password_is_blank))
+            .check(matches(isDisplayed()))
     }
 
     /**
@@ -192,6 +270,11 @@ class LoginActivityTest {
      *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
      *  - the "Text is not email" string can be found in strings.xml file as
      *  text_is_not_email const (R.string.text_is_not_email)
+     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
+     *  by character.
+     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
+     *  into text field.
+     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -201,13 +284,26 @@ class LoginActivityTest {
      */
     @Test
     fun shouldDisplayErrorWhenEmailTextIsNotEmail() {
-        fail()
+        val email = "test"
+        val password = "test"
+
+        onView(withId(R.id.emailEditText))
+            .perform(replaceText(email))
+
+        onView(withId(R.id.passwordEditText))
+            .perform(replaceText(password))
+
+        onView(withId(R.id.loginButton))
+            .perform(click())
+
+        onView(withText(R.string.text_is_not_email))
+            .check(matches(isDisplayed()))
     }
 
     /**
      * Test case:
      *  - the "Email Input" has text which not matches with
-     *  [com.alexzh.testapp.data.DummyData.LOGIN] const
+     *  [com.alexzh.testapp.data.DummyData.EMAIL] const
      *  - the "Password Input" has text which not matches with
      *  [com.alexzh.testapp.data.DummyData.PASSWORD] const
      *  - the error message with "Check email and password" text should be displayed
@@ -219,6 +315,11 @@ class LoginActivityTest {
      *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
      *  - the "Check email and password" string can be found in strings.xml file as
      *  check_email_and_password const (R.string.check_email_and_password)
+     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
+     *  by character.
+     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
+     *  into text field.
+     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -228,13 +329,26 @@ class LoginActivityTest {
      */
     @Test
     fun shouldDisplayErrorWhenEmailAndPasswordAreIncorrect() {
-        fail()
+        val email = "test@test.test"
+        val password = "test"
+
+        onView(withId(R.id.emailEditText))
+            .perform(replaceText(email))
+
+        onView(withId(R.id.passwordEditText))
+            .perform(replaceText(password))
+
+        onView(withId(R.id.loginButton))
+            .perform(click())
+
+        onView(withText(R.string.check_email_and_password))
+            .check(matches(isDisplayed()))
     }
 
     /**
      * Test case:
      *  - the "Email Input" has text which not matches with
-     *  [com.alexzh.testapp.data.DummyData.LOGIN] const
+     *  [com.alexzh.testapp.data.DummyData.EMAIL] const
      *  - the "Password Input" has text which matches with
      *  [com.alexzh.testapp.data.DummyData.PASSWORD] const
      *  - the error message with "Check email and password" text should be displayed
@@ -246,6 +360,11 @@ class LoginActivityTest {
      *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
      *  - the "Check email and password" string can be found in strings.xml file as
      *  check_email_and_password const (R.string.check_email_and_password)
+     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
+     *  by character.
+     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
+     *  into text field.
+     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -255,13 +374,26 @@ class LoginActivityTest {
      */
     @Test
     fun shouldDisplayErrorWhenEmailIsIncorrect() {
-        fail()
+        val email = "test@test.test"
+        val password = DummyData.PASSWORD
+
+        onView(withId(R.id.emailEditText))
+            .perform(replaceText(email))
+
+        onView(withId(R.id.passwordEditText))
+            .perform(replaceText(password))
+
+        onView(withId(R.id.loginButton))
+            .perform(click())
+
+        onView(withText(R.string.check_email_and_password))
+            .check(matches(isDisplayed()))
     }
 
     /**
      * Test case:
-     *  - the "Email Input" has text which  matches with
-     *  [com.alexzh.testapp.data.DummyData.LOGIN] const
+     *  - the "Email Input" has text which matches with
+     *  [com.alexzh.testapp.data.DummyData.EMAIL] const
      *  - the "Password Input" has text which not matches with
      *  [com.alexzh.testapp.data.DummyData.PASSWORD] const
      *  - the error message with "Check email and password" text should be displayed
@@ -273,6 +405,11 @@ class LoginActivityTest {
      *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
      *  - the "Check email and password" string can be found in strings.xml file as
      *  check_email_and_password const (R.string.check_email_and_password)
+     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
+     *  by character.
+     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
+     *  into text field.
+     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -282,13 +419,72 @@ class LoginActivityTest {
      */
     @Test
     fun shouldDisplayErrorWhenPasswordIsIncorrect() {
-        fail()
+        val email = DummyData.EMAIL
+        val password = "test"
+
+        onView(withId(R.id.emailEditText))
+            .perform(replaceText(email))
+
+        onView(withId(R.id.passwordEditText))
+            .perform(replaceText(password))
+
+        onView(withId(R.id.loginButton))
+            .perform(click())
+
+        onView(withText(R.string.check_email_and_password))
+            .check(matches(isDisplayed()))
     }
 
     /**
      * Test case:
      *  - the "Email Input" has text which matches with
-     *  [com.alexzh.testapp.data.DummyData.LOGIN] const
+     *  [com.alexzh.testapp.data.DummyData.EMAIL] const
+     *  - the "Password Input" has text which matches with
+     *  [com.alexzh.testapp.data.DummyData.PASSWORD] const
+     *  - the "I agree" checkbox should be not checked
+     *  - the error message with "'I agree' should be checked" text should be displayed
+     *  after click on "LOG IN" button
+     *
+     * Notes:
+     *  - the "Email Input" view has ID: emailEditText (R.id.emailEditText)
+     *  - the "Password Input" view has ID: passwordEditText (R.id.passwordEditText)
+     *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
+     *  - the "'I agree' should be checked" string can be found in strings.xml file as
+     *  i_agree_should_be_checked const (R.string.i_agree_should_be_checked)
+     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
+     *  by character.
+     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
+     *  into text field.
+     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
+     *  - the Snackbar view has error message
+     *  - the Snackbar text message view has ID: snackbar_text
+     *  (com.google.android.material.R.id.snackbar_text)
+     *
+     * Hint(s):
+     *  - error text can be found by text on screen or by text in view
+     */
+    @Test
+    fun shouldDisplayErrorWhenAgreeCheckboxIsNotChecked() {
+        val email = DummyData.EMAIL
+        val password = DummyData.PASSWORD
+
+        onView(withId(R.id.emailEditText))
+            .perform(replaceText(email))
+
+        onView(withId(R.id.passwordEditText))
+            .perform(replaceText(password))
+
+        onView(withId(R.id.loginButton))
+            .perform(click())
+
+        onView(withId(com.google.android.material.R.id.snackbar_text))
+            .check(matches(withText(R.string.i_agree_should_be_checked)))
+    }
+
+    /**
+     * Test case:
+     *  - the "Email Input" has text which matches with
+     *  [com.alexzh.testapp.data.DummyData.EMAIL] const
      *  - the "Password Input" has text which matches with
      *  [com.alexzh.testapp.data.DummyData.PASSWORD] const
      *  - the "I agree" checkbox is checked
@@ -303,6 +499,11 @@ class LoginActivityTest {
      *  - the "I agree" string can be found in strings.xml file as i_agree const (R.string.i_agree)
      *  - the "Check email and password" string can be found in strings.xml file as
      *  check_email_and_password const (R.string.check_email_and_password)
+     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
+     *  by character.
+     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
+     *  into text field.
+     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -317,6 +518,25 @@ class LoginActivityTest {
      */
     @Test
     fun shouldOpenHomeScreenWhenEmailAndPasswordAreCorrectAndAgreeCheckboxIsChecked() {
-        fail()
+        val email = DummyData.EMAIL
+        val password = DummyData.PASSWORD
+
+        Intents.init()
+
+        onView(withId(R.id.emailEditText))
+            .perform(replaceText(email))
+
+        onView(withId(R.id.passwordEditText))
+            .perform(replaceText(password))
+
+        onView(withId(R.id.agreeCheckBox))
+            .perform(click())
+
+        onView(withId(R.id.loginButton))
+            .perform(click())
+
+        Intents.intended(IntentMatchers.hasComponent(HomeActivity::class.java.name))
+
+        Intents.release()
     }
 }
