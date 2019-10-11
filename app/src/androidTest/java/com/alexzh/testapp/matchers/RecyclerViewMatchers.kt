@@ -68,13 +68,6 @@ object RecyclerViewMatchers {
     }
 
     /**
-     * Returns a matcher that matches [View] that contains number of items in RecyclerView
-     * associated with the given id.
-     *
-     * @param count the number of items in [RecyclerView].
-     */
-
-    /**
      * Returns a matcher that matches [View] that contains view at specified position
      * in RecyclerView associated with the given id.
      */
