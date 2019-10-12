@@ -1,17 +1,19 @@
 package com.alexzh.testapp.ui.home
 
+import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
 import androidx.test.espresso.intent.Intents
 import androidx.test.espresso.intent.matcher.IntentMatchers
-import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
-import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import com.alexzh.testapp.R
+import com.alexzh.testapp.data.DummyData
 import com.alexzh.testapp.ui.settings.SettingsActivity
 import org.junit.Assert.fail
 import org.junit.Rule
@@ -138,13 +140,26 @@ class HomeActivityTest {
      * Notes:
      *  - the "RecyclerView" has ID: recyclerView (R.id.recyclerView)
      *  - the "RecyclerView" shows items created in DummyData#getTasks() method
+     *  - the error message with the same text as Task title is displayed
      *
      * Hint(s):
      *  - the action on item can be made with RecyclerViewActions#actionOnItem method.
+     *  - the task can be got from DummyData#getTasks() by position use `DummyData.getTasks()[ POSITION ]`
+     *  - the title of the task can be got from title property `task.title`
+     *  - the Snackbar view has error message
+     *  - the Snackbar text message view has ID: snackbar_text (com.google.android.material.R.id.snackbar_text)
+     *
      */
     @Test
     fun shouldBeDisplayedTaskTitleWhenClickOnTask() {
-        fail()
+        val position = 0
+        val expectedText = DummyData.getTasks()[position].title
+
+        onView(withId(R.id.recyclerView))
+            .perform(actionOnItemAtPosition<RecyclerView.ViewHolder>(position, click()))
+
+        onView(withId(com.google.android.material.R.id.snackbar_text))
+            .check(matches(withText(expectedText)))
     }
 
     /**
