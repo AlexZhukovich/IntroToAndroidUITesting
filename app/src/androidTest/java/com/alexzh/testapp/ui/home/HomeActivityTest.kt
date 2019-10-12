@@ -14,7 +14,9 @@ import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import com.alexzh.testapp.R
 import com.alexzh.testapp.data.DummyData
+import com.alexzh.testapp.matchers.ToolbarMatcher.withToolbarTitle
 import com.alexzh.testapp.ui.settings.SettingsActivity
+import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.fail
 import org.junit.Rule
 import org.junit.Test
@@ -176,7 +178,11 @@ class HomeActivityTest {
      */
     @Test
     fun shouldToolbarContainsTextAppTitle() {
-        fail()
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val expectedTitle = context.getString(R.string.app_name)
+
+        onView(withId(R.id.homeToolbar))
+            .check(matches(withToolbarTitle(`is`(expectedTitle))))
     }
 
     /**

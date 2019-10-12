@@ -47,7 +47,7 @@ object ToolbarMatcher {
              *  >      got: ACTUAL-VALUE
              */
             override fun describeTo(description: Description?) {
-                // should be implemented
+                description?.appendText(textMatcher.toString())
             }
 
             /**
@@ -62,8 +62,7 @@ object ToolbarMatcher {
              *  `textMatcher.matches(TOOLBAR TITLE)`
              */
             override fun matchesSafely(toolbar: Toolbar?): Boolean {
-                // should be implemented
-                return false
+                return textMatcher.matches(toolbar?.title)
             }
         }
     }
