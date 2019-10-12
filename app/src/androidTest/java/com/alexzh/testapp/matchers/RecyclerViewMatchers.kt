@@ -47,7 +47,7 @@ object RecyclerViewMatchers {
              *  >      got: ACTUAL-VALUE
              */
             override fun describeTo(description: Description?) {
-                // should be implemented
+                description?.appendText("$count items")
             }
 
             /**
@@ -63,8 +63,7 @@ object RecyclerViewMatchers {
              *  - the count object can be compared with number of items in adapter.
              */
             override fun matchesSafely(recyclerView: RecyclerView?): Boolean {
-                // should be implemented
-                return false
+                return recyclerView?.adapter?.itemCount == count
             }
         }
     }
