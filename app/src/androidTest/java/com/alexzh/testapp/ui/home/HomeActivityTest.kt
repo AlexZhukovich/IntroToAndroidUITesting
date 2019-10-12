@@ -13,9 +13,11 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import com.alexzh.testapp.R
+import com.alexzh.testapp.actions.RecyclerViewActions.clickByChildViewWithId
 import com.alexzh.testapp.data.DummyData
 import com.alexzh.testapp.matchers.RecyclerViewMatchers.withItemCount
 import com.alexzh.testapp.matchers.ToolbarMatcher.withToolbarTitle
+import com.alexzh.testapp.ui.home.adapter.TaskViewHolder
 import com.alexzh.testapp.ui.settings.SettingsActivity
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.fail
@@ -231,7 +233,16 @@ class HomeActivityTest {
      */
     @Test
     fun shouldBeDisplayTaskInfoWhenClickedOnFavouriteIcon() {
-        fail()
+        val position = 0
+        val task = DummyData.getTasks()[position]
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val expectedValue = context.getString(R.string.formatted_favourite_task, task.title)
+
+        onView(withId(R.id.recyclerView))
+            .perform(actionOnItemAtPosition<TaskViewHolder>(position, clickByChildViewWithId(R.id.favouriteImageView)))
+
+        onView(withId(com.google.android.material.R.id.snackbar_text))
+            .check(matches(withText(expectedValue)))
     }
 
     /**

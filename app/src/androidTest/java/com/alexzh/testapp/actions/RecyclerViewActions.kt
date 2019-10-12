@@ -3,6 +3,8 @@ package com.alexzh.testapp.actions
 import android.view.View
 import androidx.test.espresso.UiController
 import androidx.test.espresso.ViewAction
+import androidx.test.espresso.matcher.ViewMatchers.*
+import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.Matcher
 
 /**
@@ -34,8 +36,7 @@ object RecyclerViewActions {
              * ```
              */
             override fun getConstraints(): Matcher<View>? {
-                // should be implemented
-                return null
+                return `is`(withEffectiveVisibility(Visibility.VISIBLE))
             }
 
             /**
@@ -43,8 +44,7 @@ object RecyclerViewActions {
              * fit nicely in a sentence like: "performing %description% action on view with id ..."
              */
             override fun getDescription(): String {
-                // should be implemented
-                return ""
+                return "performing click on child view with id: $id"
             }
 
             /**
@@ -53,10 +53,10 @@ object RecyclerViewActions {
              * Hint:
              *  - the view can contains subviews which can be found using `view.findViewById<View>(ID)`
              *  method.
-             *  - the view can be clicked use `view.click()` method.
+             *  - the view can be clicked use `view.performClick()` method.
              */
             override fun perform(uiController: UiController, view: View) {
-                // should be implemented
+                view.findViewById<View>(id).performClick()
             }
         }
     }
