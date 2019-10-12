@@ -102,7 +102,7 @@ object RecyclerViewMatchers {
              *  >      got: ACTUAL-VALUE
              */
             override fun describeTo(description: Description?) {
-                // should be implemented
+                description?.appendText("$itemMatcher at position: $position")
             }
 
             /**
@@ -120,8 +120,8 @@ object RecyclerViewMatchers {
              *  `itemMatcher.matches(VIEW)`.
              */
             override fun matchesSafely(recyclerView: RecyclerView?): Boolean {
-                // should be implemented
-                return false
+                val viewHolder = recyclerView?.findViewHolderForAdapterPosition(position)
+                return itemMatcher.matches(viewHolder?.itemView)
             }
         }
     }

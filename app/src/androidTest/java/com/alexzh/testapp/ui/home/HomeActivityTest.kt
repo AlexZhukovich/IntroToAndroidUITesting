@@ -5,6 +5,7 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
 import androidx.test.espresso.intent.Intents
 import androidx.test.espresso.intent.matcher.IntentMatchers
@@ -15,12 +16,13 @@ import androidx.test.rule.ActivityTestRule
 import com.alexzh.testapp.R
 import com.alexzh.testapp.actions.RecyclerViewActions.clickByChildViewWithId
 import com.alexzh.testapp.data.DummyData
+import com.alexzh.testapp.matchers.RecyclerViewMatchers.atPosition
 import com.alexzh.testapp.matchers.RecyclerViewMatchers.withItemCount
 import com.alexzh.testapp.matchers.ToolbarMatcher.withToolbarTitle
 import com.alexzh.testapp.ui.home.adapter.TaskViewHolder
 import com.alexzh.testapp.ui.settings.SettingsActivity
 import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.fail
+import org.hamcrest.CoreMatchers.equalTo
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -190,7 +192,7 @@ class HomeActivityTest {
 
     /**
      * Test case:
-     *  - RecyclerView should have 45 items by default
+     *  - RecyclerView should have 44 items by default
      *  - Number of tasks can be changed in [com.alexzh.testapp.data.DummyData.TASK_COUNT] const
      *
      * Notes:
@@ -207,7 +209,7 @@ class HomeActivityTest {
      *    - RecyclerViewActions#scrollToPosition(position)
      */
     @Test
-    fun shouldRecyclerViewHas45Items() {
+    fun shouldRecyclerViewHas44Items() {
         onView(withId(R.id.recyclerView))
             .check(matches(withItemCount(DummyData.getTasks().size)))
     }
@@ -265,7 +267,12 @@ class HomeActivityTest {
      */
     @Test
     fun shouldFirstTestItemIsFavourite() {
-        fail()
+        val position = 0
+        val task = DummyData.getTasks()[position]
+
+        onView(withId(R.id.recyclerView))
+            .check(matches(atPosition(position, hasDescendant(withText(task.title)))))
+            .check(matches(atPosition(position, hasDescendant(withTagValue(equalTo(R.drawable.ic_favorite_black_24dp))))))
     }
 
     /**
@@ -294,6 +301,12 @@ class HomeActivityTest {
      */
     @Test
     fun shouldLastTestItemIsNotFavourite() {
-       fail()
+        val position = DummyData.getTasks().lastIndex
+        val task = DummyData.getTasks()[position]
+
+        onView(withId(R.id.recyclerView))
+            .perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(position))
+            .check(matches(atPosition(position, hasDescendant(withText(task.title)))))
+            .check(matches(atPosition(position, hasDescendant(withTagValue(equalTo(R.drawable.ic_favorite_border_black_24dp))))))
     }
 }
