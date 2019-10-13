@@ -207,7 +207,7 @@ class LoginActivityTest {
     /**
      * Test case:
      *  - the "Email Input" has text which not matches with
-     *  [com.alexzh.testapp.data.DummyData.LOGIN] const
+     *  [com.alexzh.testapp.data.DummyData.EMAIL] const
      *  - the "Password Input" has text which not matches with
      *  [com.alexzh.testapp.data.DummyData.PASSWORD] const
      *  - the error message with "Check email and password" text should be displayed
@@ -234,7 +234,7 @@ class LoginActivityTest {
     /**
      * Test case:
      *  - the "Email Input" has text which not matches with
-     *  [com.alexzh.testapp.data.DummyData.LOGIN] const
+     *  [com.alexzh.testapp.data.DummyData.EMAIL] const
      *  - the "Password Input" has text which matches with
      *  [com.alexzh.testapp.data.DummyData.PASSWORD] const
      *  - the error message with "Check email and password" text should be displayed
@@ -261,7 +261,7 @@ class LoginActivityTest {
     /**
      * Test case:
      *  - the "Email Input" has text which  matches with
-     *  [com.alexzh.testapp.data.DummyData.LOGIN] const
+     *  [com.alexzh.testapp.data.DummyData.EMAIL] const
      *  - the "Password Input" has text which not matches with
      *  [com.alexzh.testapp.data.DummyData.PASSWORD] const
      *  - the error message with "Check email and password" text should be displayed
@@ -288,7 +288,7 @@ class LoginActivityTest {
     /**
      * Test case:
      *  - the "Email Input" has text which matches with
-     *  [com.alexzh.testapp.data.DummyData.LOGIN] const
+     *  [com.alexzh.testapp.data.DummyData.EMAIL] const
      *  - the "Password Input" has text which matches with
      *  [com.alexzh.testapp.data.DummyData.PASSWORD] const
      *  - the "I agree" checkbox is checked
