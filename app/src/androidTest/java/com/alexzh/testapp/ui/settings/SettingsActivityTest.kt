@@ -1,8 +1,22 @@
 package com.alexzh.testapp.ui.settings
 
+import androidx.appcompat.widget.SwitchCompat
+import androidx.preference.PreferenceManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.replaceText
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.contrib.RecyclerViewActions
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
-import org.junit.Assert.fail
+import com.alexzh.testapp.R
+import com.alexzh.testapp.matchers.RecyclerViewMatchers.atPosition
+import com.alexzh.testapp.matchers.ToolbarMatcher.withToolbarTitle
+import org.hamcrest.CoreMatchers.*
+import org.junit.After
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -98,7 +112,11 @@ class SettingsActivityTest {
      */
     @Test
     fun shouldToolbarContainsSettingsTitle() {
-        fail()
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val expectedTitle = context.getString(R.string.title_activity_settings)
+
+        onView(withId(R.id.settingsToolbar))
+            .check(matches(withToolbarTitle(`is`(expectedTitle))))
     }
 
     /**
@@ -124,7 +142,9 @@ class SettingsActivityTest {
      */
     @Test
     fun shouldMessagesAndSyncCategoriesDisplayed() {
-        fail()
+        onView(withId(R.id.recycler_view))
+            .check(matches(atPosition(0, hasDescendant(withText(R.string.messages_header)))))
+            .check(matches(atPosition(3, hasDescendant(withText(R.string.sync_header)))))
     }
 
     /**
@@ -152,7 +172,12 @@ class SettingsActivityTest {
      */
     @Test
     fun shouldMessagesPropertiesHaveDefaultValues() {
-        fail()
+        val signaturePosition = 1
+        val defaultReplyActionPosition = 2
+
+        onView(withId(R.id.recycler_view))
+            .check(matches(atPosition(signaturePosition, hasDescendant(withText("Not set")))))
+            .check(matches(atPosition(defaultReplyActionPosition, hasDescendant(withText(R.string.reply_entity)))))
     }
 
     /**
@@ -178,7 +203,20 @@ class SettingsActivityTest {
      */
     @Test
     fun shouldSyncPropertiesHaveDefaultValues() {
-        fail()
+        val syncEmailPeriodicallyPosition = 4
+        val downloadIncomingAttachmentsPosition = 5
+
+        onView(withId(R.id.recycler_view))
+            .check(matches(atPosition(syncEmailPeriodicallyPosition, hasDescendant(
+                allOf(
+                    `is`(instanceOf(SwitchCompat::class.java)),
+                    not(isChecked())
+                )))))
+            .check(matches(atPosition(downloadIncomingAttachmentsPosition, hasDescendant(
+                allOf(
+                    `is`(instanceOf(SwitchCompat::class.java)),
+                    not(isChecked())
+                )))))
     }
 
     /**
@@ -202,7 +240,23 @@ class SettingsActivityTest {
      */
     @Test
     fun shouldChangeDefaultValueOfYourSignature() {
-        fail()
+        val signaturePosition = 1
+        val newValue = "test"
+
+        onView(withId(R.id.recycler_view))
+            .check(matches(atPosition(signaturePosition, hasDescendant(withText(R.string.signature_title)))))
+            .check(matches(atPosition(signaturePosition, hasDescendant(withText("Not set")))))
+            .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(signaturePosition, click()))
+
+        onView(withId(android.R.id.edit))
+            .perform(replaceText(newValue))
+
+        onView(withId(android.R.id.button1))
+            .perform(click())
+
+        onView(withId(R.id.recycler_view))
+            .check(matches(atPosition(signaturePosition, hasDescendant(withText(R.string.signature_title)))))
+            .check(matches(atPosition(signaturePosition, hasDescendant(withText(`is`(newValue))))))
     }
 
     /**
@@ -230,7 +284,19 @@ class SettingsActivityTest {
      */
     @Test
     fun shouldChangeDefaultValueOfDefaultReplyAction() {
-        fail()
+        val defaultReplyPosition = 2
+
+        onView(withId(R.id.recycler_view))
+            .check(matches(atPosition(defaultReplyPosition, hasDescendant(withText(R.string.reply_title)))))
+            .check(matches(atPosition(defaultReplyPosition, hasDescendant(withText(R.string.reply_entity)))))
+            .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(defaultReplyPosition, click()))
+
+        onView(withText(R.string.reply_to_all_entity))
+            .perform(click())
+
+        onView(withId(R.id.recycler_view))
+            .check(matches(atPosition(defaultReplyPosition, hasDescendant(withText(R.string.reply_title)))))
+            .check(matches(atPosition(defaultReplyPosition, hasDescendant(withText(R.string.reply_to_all_entity)))))
     }
 
     /**
@@ -254,7 +320,20 @@ class SettingsActivityTest {
      */
     @Test
     fun shouldChangeDefaultValueOfSyncEmailPeriodically() {
-        fail()
+        val syncEmailPeriodicallyPosition = 4
+
+        onView(withId(R.id.recycler_view))
+            .check(matches(atPosition(syncEmailPeriodicallyPosition, hasDescendant(
+                allOf(
+                    `is`(instanceOf(SwitchCompat::class.java)),
+                    not(isChecked())
+                )))))
+            .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(syncEmailPeriodicallyPosition, click()))
+            .check(matches(atPosition(syncEmailPeriodicallyPosition, hasDescendant(
+                allOf(
+                    `is`(instanceOf(SwitchCompat::class.java)),
+                    isChecked()
+                )))))
     }
 
     /**
@@ -283,6 +362,43 @@ class SettingsActivityTest {
      */
     @Test
     fun shouldChangeDefaultValueOfDownloadIncomingAttachments() {
-        fail()
+        val syncEmailPeriodicallyPosition = 4
+        val downloadIncomingAttachmentsPosition = 5
+
+        onView(withId(R.id.recycler_view))
+            .check(matches(atPosition(downloadIncomingAttachmentsPosition, hasDescendant(
+                allOf(
+                    `is`(instanceOf(SwitchCompat::class.java)),
+                    not(isEnabled())
+                )))))
+            .check(matches(atPosition(downloadIncomingAttachmentsPosition, hasDescendant(
+                allOf(
+                    `is`(instanceOf(SwitchCompat::class.java)),
+                    not(isChecked())
+                )))))
+            .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(syncEmailPeriodicallyPosition, click()))
+            .check(matches(atPosition(downloadIncomingAttachmentsPosition, hasDescendant(
+                allOf(
+                    `is`(instanceOf(SwitchCompat::class.java)),
+                    isEnabled()
+                )))))
+            .check(matches(atPosition(downloadIncomingAttachmentsPosition, hasDescendant(
+                allOf(
+                    `is`(instanceOf(SwitchCompat::class.java)),
+                    not(isChecked())
+                )))))
+            .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(downloadIncomingAttachmentsPosition, click()))
+            .check(matches(atPosition(downloadIncomingAttachmentsPosition, hasDescendant(
+                allOf(
+                    `is`(instanceOf(SwitchCompat::class.java)),
+                    isChecked()
+                )))))
+    }
+
+    @After
+    fun tearDown() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+        prefs.edit().clear().commit()
     }
 }
