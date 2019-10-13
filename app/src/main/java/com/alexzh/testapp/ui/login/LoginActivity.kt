@@ -41,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (!(email == DummyData.LOGIN && password == DummyData.PASSWORD)) {
+            if (!(email == DummyData.EMAIL && password == DummyData.PASSWORD)) {
                 displayMessage(getString(R.string.check_email_and_password))
                 return@setOnClickListener
             }
