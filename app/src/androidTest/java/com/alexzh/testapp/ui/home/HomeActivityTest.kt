@@ -155,7 +155,6 @@ class HomeActivityTest {
      *  - the title of the task can be got from title property `task.title`
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text (com.google.android.material.R.id.snackbar_text)
-     *
      */
     @Test
     fun shouldBeDisplayedTaskTitleWhenClickOnTask() {

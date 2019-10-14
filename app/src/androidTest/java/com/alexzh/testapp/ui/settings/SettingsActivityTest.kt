@@ -107,7 +107,8 @@ class SettingsActivityTest {
      *  (R.string.screen_settings)
      *
      * Hint(s):
-     *  - the [InstrumentationRegistry.getInstrumentation] method allows to get an instrumentation
+     *  - the [androidx.test.platform.app.InstrumentationRegistry.getInstrumentation] method allows
+     *  to get an instrumentation (can be not implemented yet).
      *  object which has access to context of the application.
      *  - the [android.app.Instrumentation.getTargetContext] allows to get a context of the instrumented
      *  application.
@@ -141,6 +142,7 @@ class SettingsActivityTest {
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
      *  - the checking descendant property can done with [com.alexzh.testapp.matchers.RecyclerViewMatchers.atPosition]
+     *  (can be not implemented yet).
      *  ViewMatcher (can be not implemented yet).
      *  - the preference item often has 2 descends: title and value.
      *  - the [androidx.test.espresso.matcher.ViewMatchers.hasDescendant] matcher allows to match
@@ -173,10 +175,9 @@ class SettingsActivityTest {
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
      *  - the checking descendant property can done with [com.alexzh.testapp.matchers.RecyclerViewMatchers.atPosition]
+     *  (can be not implemented yet).
      *  ViewMatcher (can be not implemented yet).
      *  - the preference item often has 2 descends: title and value.
-     *  - the [androidx.test.espresso.matcher.ViewMatchers.hasDescendant] matcher allows to match
-     *  Matcher<View> to descendants of specified View.
      */
     @Test
     fun shouldMessagesPropertiesHaveDefaultValues() {
@@ -206,6 +207,7 @@ class SettingsActivityTest {
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
      *  - the checking descendant property can done with [com.alexzh.testapp.matchers.RecyclerViewMatchers.atPosition]
+     *  (can be not implemented yet).
      *  ViewMatcher (can be not implemented yet).
      *  - the preference item often has 2 descends: title and value.
      *  - the [androidx.test.espresso.matcher.ViewMatchers.isChecked] matcher allows to check that
@@ -249,7 +251,8 @@ class SettingsActivityTest {
      *  /res/xml/root_preferences.xml for understanding which preferences are used in the project.
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
-     *  - the checking descendant property can done with [com.alexzh.testapp.matchers.RecyclerViewMatchers.atPosition]
+     *   - the checking descendant property can done with [com.alexzh.testapp.matchers.RecyclerViewMatchers.atPosition]
+     *  (can be not implemented yet).
      *  ViewMatcher (can be not implemented yet).
      *  - the preference item often has 2 descends: title and value.
      *  - the [androidx.test.espresso.matcher.ViewMatchers.hasDescendant] matcher allows to match
@@ -296,6 +299,7 @@ class SettingsActivityTest {
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
      *  - the checking descendant property can done with [com.alexzh.testapp.matchers.RecyclerViewMatchers.atPosition]
+     *  (can be not implemented yet).
      *  ViewMatcher (can be not implemented yet).
      *  - the preference item often has 2 descends: title and value.
      *  - the [androidx.test.espresso.matcher.ViewMatchers.hasDescendant] matcher allows to match
