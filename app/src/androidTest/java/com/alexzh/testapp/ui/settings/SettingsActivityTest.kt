@@ -107,8 +107,12 @@ class SettingsActivityTest {
      *  (R.string.screen_settings)
      *
      * Hint(s):
-     *  - the toolbar title can be checked with ToolbarMatcher#withToolbarTitle ViewMatcher
-     *  (can be not implemented yet).
+     *  - the [InstrumentationRegistry.getInstrumentation] method allows to get an instrumentation
+     *  object which has access to context of the application.
+     *  - the [android.app.Instrumentation.getTargetContext] allows to get a context of the instrumented
+     *  application.
+     *  - the toolbar title can be checked with [com.alexzh.testapp.matchers.ToolbarMatcher.withToolbarTitle]
+     *  ViewMatcher (can be not implemented yet).
      */
     @Test
     fun shouldToolbarContainsSettingsTitle() {
@@ -136,9 +140,11 @@ class SettingsActivityTest {
      *  /res/xml/root_preferences.xml for understanding which preferences are used in the project.
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
-     *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
-     *  (can be not implemented yet).
+     *  - the checking descendant property can done with [com.alexzh.testapp.matchers.RecyclerViewMatchers.atPosition]
+     *  ViewMatcher (can be not implemented yet).
      *  - the preference item often has 2 descends: title and value.
+     *  - the [androidx.test.espresso.matcher.ViewMatchers.hasDescendant] matcher allows to match
+     *  Matcher<View> to descendants of specified View.
      */
     @Test
     fun shouldMessagesAndSyncCategoriesDisplayed() {
@@ -166,9 +172,11 @@ class SettingsActivityTest {
      *  /res/xml/root_preferences.xml for understanding which preferences are used in the project.
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
-     *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
-     *  (can be not implemented yet).
+     *  - the checking descendant property can done with [com.alexzh.testapp.matchers.RecyclerViewMatchers.atPosition]
+     *  ViewMatcher (can be not implemented yet).
      *  - the preference item often has 2 descends: title and value.
+     *  - the [androidx.test.espresso.matcher.ViewMatchers.hasDescendant] matcher allows to match
+     *  Matcher<View> to descendants of specified View.
      */
     @Test
     fun shouldMessagesPropertiesHaveDefaultValues() {
@@ -182,8 +190,8 @@ class SettingsActivityTest {
 
     /**
      * Test case:
-     *  - the "Sync email periodically" has "false" default value
-     *  - the "Download incoming attachments" has "false" default value
+     *  - the "Sync email periodically" has "not checked" default value
+     *  - the "Download incoming attachments" has "not checked" default value
      *
      * Notes:
      *  - the "Sync email periodically" string can be found in stings.xml file as sync_title const
@@ -197,9 +205,16 @@ class SettingsActivityTest {
      *  /res/xml/root_preferences.xml for understanding which preferences are used in the project.
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
-     *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
-     *  (can be not implemented yet).
+     *  - the checking descendant property can done with [com.alexzh.testapp.matchers.RecyclerViewMatchers.atPosition]
+     *  ViewMatcher (can be not implemented yet).
      *  - the preference item often has 2 descends: title and value.
+     *  - the [androidx.test.espresso.matcher.ViewMatchers.isChecked] matcher allows to check that
+     *  CheckBox, RadioButton, Switch, or other Views are checked.
+     *  - the [androidx.test.espresso.matcher.ViewMatchers.hasDescendant] matcher allows to match
+     *  Matcher<View> to descendants of specified View.
+     *  - the [org.hamcrest.CoreMatchers.instanceOf] method allows to check that View of specified
+     *  type.
+     *  - the [org.hamcrest.CoreMatchers.allOf] method allows to create a matcher of matchers.
      */
     @Test
     fun shouldSyncPropertiesHaveDefaultValues() {
@@ -234,9 +249,11 @@ class SettingsActivityTest {
      *  /res/xml/root_preferences.xml for understanding which preferences are used in the project.
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
-     *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
-     *  (can be not implemented yet).
+     *  - the checking descendant property can done with [com.alexzh.testapp.matchers.RecyclerViewMatchers.atPosition]
+     *  ViewMatcher (can be not implemented yet).
      *  - the preference item often has 2 descends: title and value.
+     *  - the [androidx.test.espresso.matcher.ViewMatchers.hasDescendant] matcher allows to match
+     *  Matcher<View> to descendants of specified View.
      */
     @Test
     fun shouldChangeDefaultValueOfYourSignature() {
@@ -278,9 +295,11 @@ class SettingsActivityTest {
      *  /res/xml/root_preferences.xml for understanding which preferences are used in the project.
      *  - check ID of Preferences container (ListView or RecyclerView). The "UiAutomatorViewer"
      *  and "Layout Inspector" can help with it.
-     *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
-     *  (can be not implemented yet).
+     *  - the checking descendant property can done with [com.alexzh.testapp.matchers.RecyclerViewMatchers.atPosition]
+     *  ViewMatcher (can be not implemented yet).
      *  - the preference item often has 2 descends: title and value.
+     *  - the [androidx.test.espresso.matcher.ViewMatchers.hasDescendant] matcher allows to match
+     *  Matcher<View> to descendants of specified View.
      */
     @Test
     fun shouldChangeDefaultValueOfDefaultReplyAction() {
@@ -317,6 +336,13 @@ class SettingsActivityTest {
      *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
      *  (can be not implemented yet).
      *  - the preference item often has 2 descends: title and value.
+     *  - the [androidx.test.espresso.matcher.ViewMatchers.isChecked] matcher allows to check that
+     *  CheckBox, RadioButton, Switch, or other Views are checked.
+     *  - the [androidx.test.espresso.matcher.ViewMatchers.hasDescendant] matcher allows to match
+     *  Matcher<View> to descendants of specified View.
+     *  - the [org.hamcrest.CoreMatchers.instanceOf] method allows to check that View of specified
+     *  type.
+     *  - the [org.hamcrest.CoreMatchers.allOf] method allows to create a matcher of matchers.
      */
     @Test
     fun shouldChangeDefaultValueOfSyncEmailPeriodically() {
@@ -359,6 +385,15 @@ class SettingsActivityTest {
      *  - the checking descendant property can done with RecyclerViewMatchers#atPosition ViewMatcher
      *  (can be not implemented yet).
      *  - the preference item often has 2 descends: title and value.
+     *  - the [androidx.test.espresso.matcher.ViewMatchers.isEnabled] matcher allow to check that
+     *  View is enabled.
+     *  - the [androidx.test.espresso.matcher.ViewMatchers.isChecked] matcher allows to check that
+     *  CheckBox, RadioButton, Switch, or other Views are checked.
+     *  - the [androidx.test.espresso.matcher.ViewMatchers.hasDescendant] matcher allows to match
+     *  Matcher<View> to descendants of specified View.
+     *  - the [org.hamcrest.CoreMatchers.instanceOf] method allows to check that View of specified
+     *  type.
+     *  - the [org.hamcrest.CoreMatchers.allOf] method allows to create a matcher of matchers.
      */
     @Test
     fun shouldChangeDefaultValueOfDownloadIncomingAttachments() {
