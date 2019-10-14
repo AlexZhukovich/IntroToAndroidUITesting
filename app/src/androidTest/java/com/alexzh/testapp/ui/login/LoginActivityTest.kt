@@ -117,11 +117,12 @@ class LoginActivityTest {
      *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
      *  - the "Email and password are blank" string can be found in strings.xml file as
      *  email_and_password_are_blank const (R.string.email_and_password_are_blank)
-     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
-     *  by character.
-     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
-     *  into text field.
-     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
+     *  - the [androidx.test.espresso.action.ViewActions.typeText] ViewAction can be used for typing
+     *  text into text field character by character.
+     *  - the [androidx.test.espresso.action.ViewActions.replaceText] ViewAction can be used for
+     *  replacing existing ot empty text into text field.
+     *  - the [androidx.test.espresso.action.ViewActions.closeSoftKeyboard] ViewAction allows to hide
+     *  a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -147,11 +148,12 @@ class LoginActivityTest {
      *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
      *  - the "Email is blank" string can be found in strings.xml file as
      *  email_is_blank const (R.string.email_is_blank)
-     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
-     *  by character.
-     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
-     *  into text field.
-     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
+     *  - the [androidx.test.espresso.action.ViewActions.typeText] ViewAction can be used for typing
+     *  text into text field character by character.
+     *  - the [androidx.test.espresso.action.ViewActions.replaceText] ViewAction can be used for
+     *  replacing existing ot empty text into text field.
+     *  - the [androidx.test.espresso.action.ViewActions.closeSoftKeyboard] ViewAction allows to hide
+     *  a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -177,11 +179,12 @@ class LoginActivityTest {
      *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
      *  - the "Password is blank" string can be found in strings.xml file as
      *  password_is_blank const (R.string.password_is_blank)
-     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
-     *  by character.
-     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
-     *  into text field.
-     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
+     *  - the [androidx.test.espresso.action.ViewActions.typeText] ViewAction can be used for typing
+     *  text into text field character by character.
+     *  - the [androidx.test.espresso.action.ViewActions.replaceText] ViewAction can be used for
+     *  replacing existing ot empty text into text field.
+     *  - the [androidx.test.espresso.action.ViewActions.closeSoftKeyboard] ViewAction allows to hide
+     *  a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -207,11 +210,12 @@ class LoginActivityTest {
      *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
      *  - the "Text is not email" string can be found in strings.xml file as
      *  text_is_not_email const (R.string.text_is_not_email)
-     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
-     *  by character.
-     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
-     *  into text field.
-     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
+     *  - the [androidx.test.espresso.action.ViewActions.typeText] ViewAction can be used for typing
+     *  text into text field character by character.
+     *  - the [androidx.test.espresso.action.ViewActions.replaceText] ViewAction can be used for
+     *  replacing existing ot empty text into text field.
+     *  - the [androidx.test.espresso.action.ViewActions.closeSoftKeyboard] ViewAction allows to hide
+     *  a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -239,11 +243,12 @@ class LoginActivityTest {
      *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
      *  - the "Check email and password" string can be found in strings.xml file as
      *  check_email_and_password const (R.string.check_email_and_password)
-     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
-     *  by character.
-     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
-     *  into text field.
-     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
+     *  - the [androidx.test.espresso.action.ViewActions.typeText] ViewAction can be used for typing
+     *  text into text field character by character.
+     *  - the [androidx.test.espresso.action.ViewActions.replaceText] ViewAction can be used for
+     *  replacing existing ot empty text into text field.
+     *  - the [androidx.test.espresso.action.ViewActions.closeSoftKeyboard] ViewAction allows to hide
+     *  a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -271,11 +276,12 @@ class LoginActivityTest {
      *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
      *  - the "Check email and password" string can be found in strings.xml file as
      *  check_email_and_password const (R.string.check_email_and_password)
-     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
-     *  by character.
-     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
-     *  into text field.
-     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
+     *  - the [androidx.test.espresso.action.ViewActions.typeText] ViewAction can be used for typing
+     *  text into text field character by character.
+     *  - the [androidx.test.espresso.action.ViewActions.replaceText] ViewAction can be used for
+     *  replacing existing ot empty text into text field.
+     *  - the [androidx.test.espresso.action.ViewActions.closeSoftKeyboard] ViewAction allows to hide
+     *  a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -303,11 +309,12 @@ class LoginActivityTest {
      *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
      *  - the "Check email and password" string can be found in strings.xml file as
      *  check_email_and_password const (R.string.check_email_and_password)
-     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
-     *  by character.
-     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
-     *  into text field.
-     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
+     *  - the [androidx.test.espresso.action.ViewActions.typeText] ViewAction can be used for typing
+     *  text into text field character by character.
+     *  - the [androidx.test.espresso.action.ViewActions.replaceText] ViewAction can be used for
+     *  replacing existing ot empty text into text field.
+     *  - the [androidx.test.espresso.action.ViewActions.closeSoftKeyboard] ViewAction allows to hide
+     *  a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -336,11 +343,12 @@ class LoginActivityTest {
      *  - the "LOG IN" button has ID: loginButton (R.id.loginButton)
      *  - the "'I agree' should be checked" string can be found in strings.xml file as
      *  i_agree_should_be_checked const (R.string.i_agree_should_be_checked)
-     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
-     *  by character.
-     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
-     *  into text field.
-     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
+     *  - the [androidx.test.espresso.action.ViewActions.typeText] ViewAction can be used for typing
+     *  text into text field character by character.
+     *  - the [androidx.test.espresso.action.ViewActions.replaceText] ViewAction can be used for
+     *  replacing existing ot empty text into text field.
+     *  - the [androidx.test.espresso.action.ViewActions.closeSoftKeyboard] ViewAction allows to hide
+     *  a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
@@ -371,11 +379,12 @@ class LoginActivityTest {
      *  - the "I agree" string can be found in strings.xml file as i_agree const (R.string.i_agree)
      *  - the "Check email and password" string can be found in strings.xml file as
      *  check_email_and_password const (R.string.check_email_and_password)
-     *  - the [ViewActions.typeText] ViewAction can be used for typing text into text field character
-     *  by character.
-     *  - the [ViewActions.replaceText] ViewAction can be used for replacing existing ot empty text
-     *  into text field.
-     *  - the [ViewActions.closeSoftKeyboard] ViewAction allows to hide a keyboard from the screen.
+     *  - the [androidx.test.espresso.action.ViewActions.typeText] ViewAction can be used for typing
+     *  text into text field character by character.
+     *  - the [androidx.test.espresso.action.ViewActions.replaceText] ViewAction can be used for
+     *  replacing existing ot empty text into text field.
+     *  - the [androidx.test.espresso.action.ViewActions.closeSoftKeyboard] ViewAction allows to hide
+     *  a keyboard from the screen.
      *  - the Snackbar view has error message
      *  - the Snackbar text message view has ID: snackbar_text
      *  (com.google.android.material.R.id.snackbar_text)
