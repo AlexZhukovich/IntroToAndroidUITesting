@@ -33,7 +33,9 @@ object RecyclerViewMatchers {
              *
              * Hint:
              *  - the description parameter should be used in a proper way to reporting issues
-             *  correctly. It's partially filled by matcher.
+             *  correctly. It's partially filled by matcher. Usually expected values passed as a
+             *  parameter for the matcher. When parameter is Hamcrest Matcher we can use `toString()`
+             *  method for convert expected value fom matcher to string.
              *  ```
              *  override fun describeTo(description: Description?) {
              *      description.appendText(EXPECTED-VALUE)
@@ -87,7 +89,9 @@ object RecyclerViewMatchers {
              *
              * Hint:
              *  - the description parameter should be used in a proper way to reporting issues
-             *  correctly. It's partially filled by matcher.
+             *  correctly. It's partially filled by matcher. Usually expected values passed as a
+             *  parameter for the matcher. When parameter is Hamcrest Matcher we can use `toString()`
+             *  method for convert expected value fom matcher to string.
              *  ```
              *  override fun describeTo(description: Description?) {
              *      description.appendText(EXPECTED-VALUE)
