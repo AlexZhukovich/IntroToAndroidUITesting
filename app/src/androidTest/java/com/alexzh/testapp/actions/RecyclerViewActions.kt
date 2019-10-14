@@ -53,7 +53,7 @@ object RecyclerViewActions {
              * Hint:
              *  - the view can contains subviews which can be found using `view.findViewById<View>(ID)`
              *  method.
-             *  - the view can be clicked use `view.click()` method.
+             *  - the view can be clicked use `view.performClick()` method.
              */
             override fun perform(uiController: UiController, view: View) {
                 // should be implemented
