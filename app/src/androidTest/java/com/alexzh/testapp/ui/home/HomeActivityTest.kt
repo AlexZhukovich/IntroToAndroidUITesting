@@ -117,9 +117,14 @@ class HomeActivityTest {
      * Notes:
      *  - the "RecyclerView" has ID: recyclerView (R.id.recyclerView)
      *  - the "RecyclerView" shows items created in DummyData#getTasks() method
+     *  - the error message with the same text as Task title is displayed
      *
      * Hint(s):
      *  - the action on item can be made with RecyclerViewActions#actionOnItem method.
+     *  - the task can be got from DummyData#getTasks() by position use `DummyData.getTasks()[ POSITION ]`
+     *  - the title of the task can be got from title property `task.title`
+     *  - the Snackbar view has error message
+     *  - the Snackbar text message view has ID: snackbar_text (com.google.android.material.R.id.snackbar_text)
      */
     @Test
     fun shouldBeDisplayedTaskTitleWhenClickOnTask() {
@@ -145,7 +150,7 @@ class HomeActivityTest {
 
     /**
      * Test case:
-     *  - RecyclerView should have 45 items by default
+     *  - RecyclerView should have 44 items by default
      *  - Number of tasks can be changed in [com.alexzh.testapp.data.DummyData.TASK_COUNT] const
      *
      * Notes:
@@ -162,7 +167,7 @@ class HomeActivityTest {
      *    - RecyclerViewActions#scrollToPosition(position)
      */
     @Test
-    fun shouldRecyclerViewHas45Items() {
+    fun shouldRecyclerViewHas44Items() {
         fail()
     }
 
