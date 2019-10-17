@@ -42,3 +42,18 @@ The **solutions** branch has solutions for all test cases.
 <p align="center">
   <img src="art/screens-with-views/settings-screen.png" width="800" />
 </p>
+
+# Resources
+* Espresso
+    * [Official documentation](https://developer.android.com/training/testing/espresso)
+* Hamcrest matcher
+    * [Official documentation](http://hamcrest.org/JavaHamcrest/)
+    * [Matchers](http://hamcrest.org/JavaHamcrest/javadoc/1.3/org/hamcrest/Matchers.html)
+* UI Testing Tools
+    * **UiAutomator Viewer**
+        * [Documentation](https://developer.android.com/training/testing/ui-automator#ui-automator-viewer)
+        * [Video Tutorial](https://www.youtube.com/watch?v=XBhfYAYKZF4)
+    * **Layout Inspector**
+        * [Documentation](https://developer.android.com/studio/debug/layout-inspector)
+        * [Video Tutorial](https://www.youtube.com/watch?v=3out6Eh_DmQ)
+    * [Comparing *UiAutomator Viewer* and *Layout Inspector*](https://alexzh.com/2018/12/10/efficient-testing-android-app-tools/)
