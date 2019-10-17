@@ -28,17 +28,17 @@ The **solutions** branch has solutions for all test cases.
 ***Note:** In case if any of description is not understandable, please create an issue.*  
 
 # App screens with views
-## Login screen
+**Login screen**
 <p align="center">
   <img src="art/screens-with-views/login-screen.png" width="800" />
 </p>
 
-## Home screen
+**Home screen**
 <p align="center">
   <img src="art/screens-with-views/home-screen.png" width="800" />
 </p>
 
-## Settings screen
+**Settings screen**
 <p align="center">
   <img src="art/screens-with-views/settings-screen.png" width="800" />
 </p>
