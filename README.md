@@ -25,20 +25,20 @@ Each test case has a comment with a description of the test case and a hint (wha
 
 The **solutions** branch has solutions for all test cases.
 
-Note: In case if any of description is not understandable, please create an issue.  
+***Note:** In case if any of description is not understandable, please create an issue.*  
 
 # App screens with views
 ## Login screen
-<p float="center">
+<p align="center">
   <img src="art/screens-with-views/login-screen.png" width="800" />
 </p>
 
 ## Home screen
-<p float="center">
+<p align="center">
   <img src="art/screens-with-views/home-screen.png" width="800" />
 </p>
 
 ## Settings screen
-<p float="center">
+<p align="center">
   <img src="art/screens-with-views/settings-screen.png" width="800" />
 </p>
