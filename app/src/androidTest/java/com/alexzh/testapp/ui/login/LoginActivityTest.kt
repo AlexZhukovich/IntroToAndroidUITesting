@@ -167,6 +167,7 @@ class LoginActivityTest {
     }
 
     /**
+     * [ OPTIONAL ]
      * Test case:
      *  - the "Email Input" is NOT blank
      *  - the "Password Input" is blank
@@ -229,6 +230,7 @@ class LoginActivityTest {
     }
 
     /**
+     * [ OPTIONAL ]
      * Test case:
      *  - the "Email Input" has text which not matches with
      *  [com.alexzh.testapp.data.DummyData.EMAIL] const
@@ -262,6 +264,7 @@ class LoginActivityTest {
     }
 
     /**
+     * [ OPTIONAL ]
      * Test case:
      *  - the "Email Input" has text which not matches with
      *  [com.alexzh.testapp.data.DummyData.EMAIL] const
@@ -295,6 +298,7 @@ class LoginActivityTest {
     }
 
     /**
+     * [ OPTIONAL ]
      * Test case:
      *  - the "Email Input" has text which  matches with
      *  [com.alexzh.testapp.data.DummyData.EMAIL] const
@@ -328,6 +332,7 @@ class LoginActivityTest {
     }
 
     /**
+     * [ OPTIONAL ]
      * Test case:
      *  - the "Email Input" has text which matches with
      *  [com.alexzh.testapp.data.DummyData.EMAIL] const

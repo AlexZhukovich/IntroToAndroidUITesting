@@ -84,6 +84,7 @@ class SettingsActivityTest {
     val activity = ActivityTestRule(SettingsActivity::class.java)
 
     /**
+     * [ OPTIONAL ]
      * Test case:
      *  - Toolbar should have a text "Settings"
      *
@@ -226,6 +227,7 @@ class SettingsActivityTest {
     }
 
     /**
+     * [ OPTIONAL ]
      * Test case:
      *  - the "Default reply action" has "Reply" default value
      *  - the "Default reply action" has "Reply to all" value after changing it in dialog
