@@ -1,6 +1,6 @@
 # Introduction to Android UI Testing
 
-The application was created for improving skills (from the very beginning) in testing Android application use Espresso framework. Each screen contains UI elements which are used by many applications. 
+The application was created for improving skills (from the very beginning) in UI/end-to-end testing of Android applications using Espresso framework. Each screen contains UI elements which are used by many applications. 
 
 <p align="center">
   <img src="/art/screenshots/login_screen_framed.png" height="500" />
